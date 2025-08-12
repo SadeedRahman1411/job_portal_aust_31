@@ -1,66 +1,101 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Job Axis
 
+**Job Axis** is a smart and efficient web-based job portal that connects job seekers with suitable employers. The platform is designed to streamline the hiring process by leveraging Artificial Intelligence to provide personalized job recommendations, reduce mismatches, and save time for both candidates and employers. With a user-friendly interface and modern technologies, Job Axis aims to deliver a seamless and effective experience for all users.
+
+## 🌟 Key Features
+
+-   🔍 **AI-Powered Job Matching**  
+    Smart job recommendations based on user profiles, preferences, and behavior.
+
+-   🧑‍💼 **Separate Dashboards**  
+    Individual dashboards for job seekers and employers with tailored functionality.
+
+-   📝 **Advanced Job Posting & Application System**  
+    Employers can create detailed job listings; users can easily apply and track applications.
+
+-   📊 **Real-Time Analytics**  
+    View job insights, application counts, and more.
+
+-   📂 **Resume & Profile Management**  
+    Upload resumes, edit personal information, and update job preferences.
+
+-   🔒 **Secure Authentication**  
+    Role-based access with encrypted password handling and secure session management.
+
+-   🌐 **Responsive UI**  
+    Fully responsive design for mobile, tablet, and desktop using modern front-end tools.
+
+-   🛠️ **Admin Panel**  
+    Manage users, job categories, reports, and site-wide settings efficiently.
+
+## 🛠️ Technologies Used
+
+-   **Backend**: Laravel (PHP Framework)
+-   **Database**: phpMyAdmin (MySQL)
+-   **Frontend**: React JS (JavaScript Library)
+-   **Authentication**: Laravel Breeze / Sanctum (or Passport)
+-   **Styling**: Tailwind CSS / Bootstrap
+-   **AI Integration**: (Planned) Machine Learning models for job matching
+    <br><br>
+
+# Group Members/Collaboratos
+
+**Members:**<br>
+
+-   Jabin Tasnim **(20220204058)**<br> [Jabin's WakaTime](https://wakatime.com/@jabin03/projects/eiguabqmbp?start=2025-07-21&end=2025-07-27)
+-   Faiad Nakib **(20220204080)**<br> [Faiad's WakaTime](https://wakatime.com/@7d570a56-773f-4e49-8d78-0b0803fea282/projects/cotjcdyaqo?start=2025-07-20&end=2025-07-26)
+
+-   Sadeed Rahman **(20220204081)**<br> [Sadeed's WakaTime](https://wakatime.com/@3764e15a-69bc-4b7d-ad15-f837a011962c/projects/yhmzwifodz?start=2025-07-20&end=2025-07-26)
+
+-   Ariyan Islam Abir **(20220204083)**<br> [Abir's WakaTime](https://wakatime.com/@77b92341-2c76-4833-925d-42b65958bf2f/projects/fjvpthdehc?start=2025-07-20&end=2025-07-26)
+
+<br><br>
+
+# UI/UX Concept(Figma Design)
+
+[Figma Design – Job Portal Application](https://www.figma.com/make/0LyGzxitBmQ9GJ6LV52d8a/Job-Portal-Application?node-id=0-1&p=f&t=AV7PVaUiNfiQpVKw-0)
+<br><br>
+
+## HomePage
+
+<p style="font-size:17px;">Consists of Search Bar as well as Some Featured Jobs</p>
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+<img src="./assets/HomePg-1.png" alt="Job Portal" width="400"/>&nbsp;&nbsp;
+<img src="./assets/HomePg-2.png" alt="Job Portal" width="400"/>
 </p>
 
-## About Laravel
+## Artificial Intelligence
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p style="font-size:17px;">Artificial Intelligence Assistance is available to both Job seekers and Providers on this site.</p>
+<p align="center">
+<img src="./assets/AI.png" alt="Job Portal" width="500"/>&nbsp;&nbsp;
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Available Jobs Page
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<p style="font-size:17px;">Shows avaible Jobs and also provides users to filter and select out Jobs based on their desired skills/qualifications</p>
+<p align="center">
+<img src="./assets/JobPg-1.png" alt="Job Portal" width="500"/>&nbsp;&nbsp;
+</p>
 
-## Learning Laravel
+## Contact Page
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+<p style="font-size:17px;">Provides users to communicate with Developers/Admins of the site regarding the issues/difficulties they may face in using this site</p>
+<p align="center">
+<img src="./assets/ContactPg-1.png" alt="Job Portal" width="400"/>&nbsp;&nbsp;
+<img src="./assets/ContactPg-2 - Copy.png" alt="Job Portal" width="400"/>
+</p>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## About Us
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<p align="center">
+<img src="./assets/AboutPg-1.png" alt="Job Portal" width="600"/>&nbsp;&nbsp;
+</p>
 
-## Laravel Sponsors
+<br><br>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## Login/Registration Page
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<p align="center">
+<img src="./assets/LoginPg.png" alt="Job Portal" width="400"/>&nbsp;&nbsp;
+<img src="./assets/SignUpPg.png" alt="Job Portal" width="400"/>
