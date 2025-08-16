@@ -7,6 +7,8 @@ use App\Http\Requests\StoreApplicantsRequest;
 use App\Http\Requests\UpdateApplicantsRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\ApplicantsResource;
+use App\Http\Resources\V1\ApplicantsCollection; // Assuming you have a resource collection for applicants
+use Illuminate\Http\Request;
 
 class ApplicantsController extends Controller
 {
@@ -15,7 +17,7 @@ class ApplicantsController extends Controller
      */
     public function index()
     {
-       return Applicants::all(); // Example implementation
+       return new ApplicantsCollection(Applicants::all()); // Example implementation
     }
 
     /**

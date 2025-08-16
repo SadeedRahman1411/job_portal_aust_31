@@ -7,6 +7,8 @@ use App\Http\Requests\StoreOrganization_contactsRequest;
 use App\Http\Requests\UpdateOrganization_contactsRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\OrganizationContactsResource;
+use App\Http\Resources\V1\OrganizationContactsCollection; // Assuming you have a resource collection for organization contacts
+use Illuminate\Http\Request;
 
 class OrganizationContactsController extends Controller
 {
@@ -15,7 +17,7 @@ class OrganizationContactsController extends Controller
      */
     public function index()
     {
-        return Organization_contacts::all(); // Example implementation
+        return new OrganizationContactsCollection(Organization_contacts::all()); // Example implementation
     }
 
     /**

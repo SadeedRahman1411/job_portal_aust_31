@@ -7,6 +7,8 @@ use App\Http\Requests\StoreJobsRequest;
 use App\Http\Requests\UpdateJobsRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\JobsResource;
+use App\Http\Resources\V1\JobsCollection; // Assuming you have a resource collection for jobs
+use Illuminate\Http\Request;
 
 class JobsController extends Controller
 {
@@ -15,7 +17,7 @@ class JobsController extends Controller
      */
     public function index()
     {
-        return Jobs::all(); // Example implementation
+        return new JobsCollection(Jobs::all()); // Example implementation
     }
 
     /**

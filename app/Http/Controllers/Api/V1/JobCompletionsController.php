@@ -7,6 +7,8 @@ use App\Http\Requests\Storejob_completionsRequest;
 use App\Http\Requests\Updatejob_completionsRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\JobsCompletedResource; // Assuming you have a resource for job completions
+use App\Http\Resources\V1\JobsCompletedCollection; // Assuming you have a resource collection for job completions
+use Illuminate\Http\Request;
 
 class JobCompletionsController extends Controller
 {
@@ -15,7 +17,7 @@ class JobCompletionsController extends Controller
      */
     public function index()
     {
-        return job_completions::all();//
+        return new JobsCompletedCollection(job_completions::all());//
     }
 
     /**

@@ -6,6 +6,9 @@ use App\Models\Interview;
 use App\Http\Requests\StoreInterviewRequest;
 use App\Http\Requests\UpdateInterviewRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\InterviewResource; // Assuming you have a resource for interviews
+use App\Http\Resources\V1\InterviewCollection; // Assuming you have a resource collection for interviews
+use Illuminate\Http\Request;
 
 class InterviewController extends Controller
 {

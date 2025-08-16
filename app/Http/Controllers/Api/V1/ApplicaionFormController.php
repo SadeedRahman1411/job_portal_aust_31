@@ -7,6 +7,8 @@ use App\Http\Requests\StoreApplicaion_FormRequest;
 use App\Http\Requests\UpdateApplicaion_FormRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\ApplicaionFormResource;
+use App\Http\Resources\V1\ApplicaionFormCollection; // Assuming you have a resource collection for application forms
+use Illuminate\Http\Request;
 
 class ApplicaionFormController extends Controller
 {
@@ -15,7 +17,7 @@ class ApplicaionFormController extends Controller
      */
     public function index()
     {
-        return Applicaion_Form::all(); // Example implementation
+        return new ApplicaionFormCollection(Applicaion_Form::all()); // Example implementation
     }
 
     /**

@@ -7,6 +7,8 @@ use App\Http\Requests\StoreOrganizationsRequest;
 use App\Http\Requests\UpdateOrganizationsRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\OrganizationsResource;
+use App\Http\Resources\V1\OrganizationsCollection; // Assuming you have a resource collection for organizations
+use Illuminate\Http\Request;
 
 class OrganizationsController extends Controller
 {
@@ -15,7 +17,7 @@ class OrganizationsController extends Controller
      */
     public function index()
     {
-       return Organizations::all(); // Example implementation
+       return new OrganizationsCollection(Organizations::all()); // Example implementation
         // --- IGNORE ---
     }
 

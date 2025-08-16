@@ -7,6 +7,8 @@ use App\Http\Requests\StoreApplicant_contactsRequest;
 use App\Http\Requests\UpdateApplicant_contactsRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\ApplicantContactsResource;
+use App\Http\Resources\V1\ApplicantContactsCollection; // Assuming you have a resource collection for applicant contacts
+use Illuminate\Http\Request;
 
 class ApplicantContactsController extends Controller
 {
@@ -15,7 +17,7 @@ class ApplicantContactsController extends Controller
      */
     public function index()
     {
-        return Applicant_contacts::all(); // Example implementation
+        return new ApplicantContactsCollection(Applicant_contacts::all()); // Example implementation
     }
 
     /**
