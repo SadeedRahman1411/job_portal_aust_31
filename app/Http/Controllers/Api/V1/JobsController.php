@@ -9,15 +9,24 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\JobsResource;
 use App\Http\Resources\V1\JobsCollection; // Assuming you have a resource collection for jobs
 use Illuminate\Http\Request;
+use App\Filters\V1\JobsFilter; // Assuming you have a filter class for jobs
 
 class JobsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new JobsCollection(Jobs::paginate()); // Example implementation
+        $filter = new JobsFilter();
+         $filterItems = $filter->transform($request);
+
+         if(count($filterItems) === 0) {
+            return new JobsCollection(Jobs::paginate()); // Example implementation
+         }
+         else {
+            return new JobsCollection(Jobs::where($filterItems)->paginate()); // Example implementation
+         }
     }
 
     /**

@@ -9,15 +9,24 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\OrganizationContactsResource;
 use App\Http\Resources\V1\OrganizationContactsCollection; // Assuming you have a resource collection for organization contacts
 use Illuminate\Http\Request;
+use App\Filters\V1\OrganizationContactsFilter; // Assuming you have a filter class for organization contacts
 
 class OrganizationContactsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new OrganizationContactsCollection(Organization_contacts::paginate()); // Example implementation
+        $filter = new OrganizationContactsFilter();
+         $filterItems = $filter->transform($request);
+
+         if(count($filterItems) === 0) {
+            return new OrganizationContactsCollection(Organization_contacts::paginate()); // Example implementation
+         }
+         else {
+            return new OrganizationContactsCollection(Organization_contacts::where($filterItems)->paginate()); // Example implementation
+         }
     }
 
     /**

@@ -9,15 +9,27 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\ApplicantsResource;
 use App\Http\Resources\V1\ApplicantsCollection; // Assuming you have a resource collection for applicants
 use Illuminate\Http\Request;
+use App\Filters\V1\ApplicantsFilter; // Assuming you have a filter class for applicants
 
 class ApplicantsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-       return new ApplicantsCollection(Applicants::paginate()); // Example implementation
+        $filter = new ApplicantsFilter();
+         $filterItems = $filter->transform($request);
+
+         if(count($filterItems) === 0) {
+            return new ApplicantsCollection(Applicants::paginate()); // Example implementation
+         }
+         else {
+            return new ApplicantsCollection(Applicants::where($filterItems)->paginate()); // Example implementation
+         }
+
+        // Applicants::where($filterItems);
+
     }
 
     /**

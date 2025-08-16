@@ -9,15 +9,24 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\ApplicaionFormResource;
 use App\Http\Resources\V1\ApplicaionFormCollection; // Assuming you have a resource collection for application forms
 use Illuminate\Http\Request;
+use App\Filters\V1\ApplicationFormFilter; // Assuming you have a filter class for application forms
 
 class ApplicaionFormController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new ApplicaionFormCollection(Applicaion_Form::paginate()); // Example implementation
+       $filter = new ApplicationFormFilter();
+         $filterItems = $filter->transform($request);
+
+         if(count($filterItems) === 0) {
+            return new ApplicaionFormCollection(Applicaion_Form::paginate()); // Example implementation
+         }
+         else {
+            return new ApplicaionFormCollection(Applicaion_Form::where($filterItems)->paginate()); // Example implementation
+         }
     }
 
     /**

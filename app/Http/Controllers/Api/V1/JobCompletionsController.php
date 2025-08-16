@@ -9,15 +9,24 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\JobsCompletedResource; // Assuming you have a resource for job completions
 use App\Http\Resources\V1\JobsCompletedCollection; // Assuming you have a resource collection for job completions
 use Illuminate\Http\Request;
+use App\Filters\V1\JobCompletionsFilter; // Assuming you have a filter class for job completions
 
 class JobCompletionsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new JobsCompletedCollection(job_completions::paginate());//
+         $filter = new JobCompletionsFilter();
+         $filterItems = $filter->transform($request);
+
+         if(count($filterItems) === 0) {
+            return new JobsCompletedCollection(job_completions::paginate()); // Example implementation
+         }
+         else {
+            return new JobsCompletedCollection(job_completions::where($filterItems)->paginate()); // Example implementation
+         }
     }
 
     /**

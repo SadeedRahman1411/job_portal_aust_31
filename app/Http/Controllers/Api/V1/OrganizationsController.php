@@ -9,16 +9,24 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\OrganizationsResource;
 use App\Http\Resources\V1\OrganizationsCollection; // Assuming you have a resource collection for organizations
 use Illuminate\Http\Request;
+use App\Filters\V1\OrganizationsFilter; // Assuming you have a filter class for organizations
 
 class OrganizationsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-       return new OrganizationsCollection(Organizations::paginate()); // Example implementation
-        // --- IGNORE ---
+       $filter = new OrganizationsFilter();
+         $filterItems = $filter->transform($request);
+
+         if(count($filterItems) === 0) {
+            return new OrganizationsCollection(Organizations::paginate()); // Example implementation
+         }
+         else {
+            return new OrganizationsCollection(Organizations::where($filterItems)->paginate()); // Example implementation
+         }
     }
 
     /**

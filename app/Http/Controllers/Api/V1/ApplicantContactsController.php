@@ -9,15 +9,24 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\ApplicantContactsResource;
 use App\Http\Resources\V1\ApplicantContactsCollection; // Assuming you have a resource collection for applicant contacts
 use Illuminate\Http\Request;
+use App\Filters\V1\ApplicantContactsFilter; // Assuming you have a filter class for applicant contacts
 
 class ApplicantContactsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new ApplicantContactsCollection(Applicant_contacts::paginate()); // Example implementation
+        $filter = new ApplicantContactsFilter();
+         $filterItems = $filter->transform($request);
+
+         if(count($filterItems) === 0) {
+            return new ApplicantContactsCollection(Applicant_contacts::paginate()); // Example implementation
+         }
+         else {
+            return new ApplicantContactsCollection(Applicant_contacts::where($filterItems)->paginate()); // Example implementation
+         }
     }
 
     /**
