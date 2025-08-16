@@ -25,7 +25,8 @@ class OrganizationContactsController extends Controller
             return new OrganizationContactsCollection(Organization_contacts::paginate()); // Example implementation
          }
          else {
-            return new OrganizationContactsCollection(Organization_contacts::where($filterItems)->paginate()); // Example implementation
+           $organizationcontacts = Organization_contacts::where($filterItems)->paginate();
+            return new OrganizationContactsCollection($organizationcontacts->appends($request->query())); // Example implementation
          }
     }
 

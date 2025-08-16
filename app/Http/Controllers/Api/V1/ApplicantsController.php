@@ -25,7 +25,8 @@ class ApplicantsController extends Controller
             return new ApplicantsCollection(Applicants::paginate()); // Example implementation
          }
          else {
-            return new ApplicantsCollection(Applicants::where($filterItems)->paginate()); // Example implementation
+            $applicants = Applicants::where($filterItems)->paginate();
+            return new ApplicantsCollection($applicants->appends($request->query())); // Example implementation
          }
 
         // Applicants::where($filterItems);

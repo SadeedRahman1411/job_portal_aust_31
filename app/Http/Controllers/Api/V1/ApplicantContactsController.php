@@ -25,7 +25,8 @@ class ApplicantContactsController extends Controller
             return new ApplicantContactsCollection(Applicant_contacts::paginate()); // Example implementation
          }
          else {
-            return new ApplicantContactsCollection(Applicant_contacts::where($filterItems)->paginate()); // Example implementation
+           $applicantcontacts = Applicant_contacts::where($filterItems)->paginate();
+            return new ApplicantContactsCollection($applicantcontacts->appends($request->query())); // Example implementation
          }
     }
 

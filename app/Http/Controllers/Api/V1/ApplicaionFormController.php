@@ -25,7 +25,8 @@ class ApplicaionFormController extends Controller
             return new ApplicaionFormCollection(Applicaion_Form::paginate()); // Example implementation
          }
          else {
-            return new ApplicaionFormCollection(Applicaion_Form::where($filterItems)->paginate()); // Example implementation
+            $applicationform = Applicaion_Form::where($filterItems)->paginate();
+            return new ApplicaionFormCollection($applicationform->appends($request->query())); // Example implementation
          }
     }
 

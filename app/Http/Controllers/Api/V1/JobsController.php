@@ -25,7 +25,8 @@ class JobsController extends Controller
             return new JobsCollection(Jobs::paginate()); // Example implementation
          }
          else {
-            return new JobsCollection(Jobs::where($filterItems)->paginate()); // Example implementation
+            $jobs = Jobs::where($filterItems)->paginate();
+            return new JobsCollection($jobs->appends($request->query())); // Example implementation
          }
     }
 

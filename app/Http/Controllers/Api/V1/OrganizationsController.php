@@ -25,7 +25,8 @@ class OrganizationsController extends Controller
             return new OrganizationsCollection(Organizations::paginate()); // Example implementation
          }
          else {
-            return new OrganizationsCollection(Organizations::where($filterItems)->paginate()); // Example implementation
+           $organizations = Organizations::where($filterItems)->paginate();
+            return new OrganizationsCollection($organizations->appends($request->query())); // Example implementation
          }
     }
 

@@ -25,7 +25,8 @@ class JobCompletionsController extends Controller
             return new JobsCompletedCollection(job_completions::paginate()); // Example implementation
          }
          else {
-            return new JobsCompletedCollection(job_completions::where($filterItems)->paginate()); // Example implementation
+           $jobcompletions = job_completions::where($filterItems)->paginate();
+            return new JobsCompletedCollection($jobcompletions->appends($request->query())); // Example implementation
          }
     }
 

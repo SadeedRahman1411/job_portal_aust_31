@@ -15,14 +15,12 @@ class OrganizationsResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id' => $this->id,
-            'user' => $this->user ? [
+                'id' => $this->id,
                 'userId' => $this->user->id,
                 'name' => $this->user->name,
                 'email' => $this->user->email,
                 'role' => $this->user->role,
                 'profilePicture' => $this->user->profile_picture,
-            ] : null,
             'companyName' => $this->company_name,
             'address' => $this->address,
             ];

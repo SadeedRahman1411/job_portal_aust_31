@@ -45,7 +45,7 @@
 -   Jabin Tasnim **(20220204058)**<br> [Jabin's WakaTime](https://wakatime.com/@jabin03/projects/eiguabqmbp?start=2025-07-21&end=2025-07-27)
 -   Faiad Nakib **(20220204080)**<br> [Faiad's WakaTime](https://wakatime.com/@7d570a56-773f-4e49-8d78-0b0803fea282/projects/cotjcdyaqo?start=2025-07-20&end=2025-07-26)
 
--   Sadeed Rahman **(20220204081)**<br> [Sadeed's WakaTime](https://wakatime.com/@3764e15a-69bc-4b7d-ad15-f837a011962c/projects/yhmzwifodz?start=2025-07-20&end=2025-07-26)
+-   Sadeed Rahman **(20220204081)**<br> [Sadeed's WakaTime](https://wakatime.com/@3764e15a-69bc-4b7d-ad15-f837a011962c/projects/yhmzwifodz)
 
 -   Ariyan Islam Abir **(20220204083)**<br> [Abir's WakaTime](https://wakatime.com/@77b92341-2c76-4833-925d-42b65958bf2f/projects/fjvpthdehc?start=2025-07-20&end=2025-07-26)
 

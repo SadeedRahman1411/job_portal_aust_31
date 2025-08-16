@@ -10,7 +10,7 @@ class ApplicantsFilter extends ApiFilter
 {
     protected $safeParms = [ //allowed parameters for filtering
         'id'=> ['eq', 'gt', 'lt', 'gte', 'lte'], // numeric comparisons
-        'userId'=> ['eq'],  // filter by user_id
+        'userId'=> ['eq','gt', 'lt', 'gte', 'lte'],  // filter by user_id
         'name'=> ['eq', 'like'],// from related users table
         'email'=> ['eq', 'like'],// from related users table
         'address'=> ['eq', 'like'],
