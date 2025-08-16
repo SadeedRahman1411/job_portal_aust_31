@@ -1,6 +1,7 @@
 <nav class="bg-white border-b border-gray-200 sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center h-16">
+            
             {{-- Logo --}}
             <a href="{{ route('home') }}" class="flex items-center space-x-2">
                 <svg xmlns="http://www.w3.org/2000/svg" 
@@ -34,13 +35,13 @@
 
             {{-- Auth --}}
             <div class="flex items-center space-x-4">
-                <a href="{{ route('auth') }}?mode=signin"
+                <a href="{{ route('login') }}"
                    class="px-4 py-2 rounded-md text-gray-700 hover:bg-gray-100">
-                    Sign In
+                    Login
                 </a>
-                <a href="{{ route('auth') }}?mode=signup"
+                <a href="{{ route('register') }}"
                    class="px-4 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700">
-                    Get Started
+                    Sign Up
                 </a>
             </div>
         </div>
