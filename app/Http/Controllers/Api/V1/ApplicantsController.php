@@ -26,10 +26,12 @@ class ApplicantsController extends Controller
 
            $applicants = Applicants::where($filterItems);
            
-          if($includeApplicantContacts) 
-          {
-            $applicants = $applicants->with('contacts'); // Eager load applicant contacts if requested
-          }
+         if ($includeApplicantContacts) {
+    $applicants = $applicants->with(['contacts' => function ($query) use ($request) {
+        if ($request->has('type.eq')) {
+            $query->where('type', $request->query('type')['eq']);
+        }
+    }]);
           if($includeJobCompletions){
             $applicants = $applicants->with('jobsCompleted'); // Eager load job completions if requested
           }
@@ -39,6 +41,7 @@ class ApplicantsController extends Controller
         // Applicants::where($filterItems);
 
     }
+}
 
     /**
      * Show the form for creating a new resource.

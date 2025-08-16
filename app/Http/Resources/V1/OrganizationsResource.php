@@ -23,6 +23,7 @@ class OrganizationsResource extends JsonResource
                 'profilePicture' => $this->user->profile_picture,
             'companyName' => $this->company_name,
             'address' => $this->address,
+            'contacts' => OrganizationContactsResource::collection($this->whenLoaded('contacts')),
             ];
     }
 }

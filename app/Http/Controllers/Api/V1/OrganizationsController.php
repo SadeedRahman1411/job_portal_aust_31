@@ -21,13 +21,21 @@ class OrganizationsController extends Controller
        $filter = new OrganizationsFilter();
          $filterItems = $filter->transform($request);
 
-         if(count($filterItems) === 0) {
-            return new OrganizationsCollection(Organizations::paginate()); // Example implementation
-         }
-         else {
-           $organizations = Organizations::where($filterItems)->paginate();
-            return new OrganizationsCollection($organizations->appends($request->query())); // Example implementation
-         }
+         $includeOrganizationContacts = $request->query('includeOrganizationContacts');
+
+         $organizations = Organizations::where($filterItems);
+
+      if ($includeOrganizationContacts) {
+    $organizations = $organizations->with(['contacts' => function ($query) use ($request) {
+        if ($request->has('type.eq')) {
+            $query->where('type', $request->query('type')['eq']);
+        }
+    }]);
+}
+
+           return new OrganizationsCollection($organizations->paginate()->appends($request->query()));
+
+
     }
 
     /**
