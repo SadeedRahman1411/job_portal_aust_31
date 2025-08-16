@@ -5,8 +5,71 @@
         "build": "vite build"
     },
     "devDependencies": {
+        "@tailwindcss/forms": "^0.5.2",
+        "alpinejs": "^3.4.2",
+        "autoprefixer": "^10.4.2",
         "axios": "^1.1.2",
         "laravel-vite-plugin": "^0.7.2",
+        "postcss": "^8.4.31",
+        "tailwindcss": "^3.1.0",
         "vite": "^4.0.0"
-    }
+    },
+    "name": "job_portal_aust_31",
+    "version": "1.0.0",
+    "description": "**Job Axis** is a smart and efficient web-based job portal that connects job seekers with suitable employers. The platform is designed to streamline the hiring process by leveraging Artificial Intelligence to provide personalized job recommendations, reduce mismatches, and save time for both candidates and employers. With a user-friendly interface and modern technologies, Job Axis aims to deliver a seamless and effective experience for all users.",
+    "main": "vite.config.js",
+    "directories": {
+        "test": "tests"
+    },
+    "dependencies": {
+        "asynckit": "^0.4.0",
+        "browserslist": "^4.25.2",
+        "call-bind-apply-helpers": "^1.0.2",
+        "caniuse-lite": "^1.0.30001735",
+        "combined-stream": "^1.0.8",
+        "delayed-stream": "^1.0.0",
+        "dunder-proto": "^1.0.1",
+        "electron-to-chromium": "^1.5.203",
+        "es-define-property": "^1.0.1",
+        "es-errors": "^1.3.0",
+        "es-object-atoms": "^1.1.1",
+        "es-set-tostringtag": "^2.1.0",
+        "esbuild": "^0.18.20",
+        "escalade": "^3.2.0",
+        "follow-redirects": "^1.15.11",
+        "form-data": "^4.0.4",
+        "fraction.js": "^4.3.7",
+        "function-bind": "^1.1.2",
+        "get-intrinsic": "^1.3.0",
+        "get-proto": "^1.0.1",
+        "gopd": "^1.2.0",
+        "has-symbols": "^1.1.0",
+        "has-tostringtag": "^1.0.2",
+        "hasown": "^2.0.2",
+        "math-intrinsics": "^1.1.0",
+        "mime-db": "^1.52.0",
+        "mime-types": "^2.1.35",
+        "nanoid": "^3.3.11",
+        "node-releases": "^2.0.19",
+        "normalize-range": "^0.1.2",
+        "picocolors": "^1.1.1",
+        "picomatch": "^2.3.1",
+        "postcss-value-parser": "^4.2.0",
+        "proxy-from-env": "^1.1.0",
+        "rollup": "^3.29.5",
+        "source-map-js": "^1.2.1",
+        "update-browserslist-db": "^1.1.3",
+        "vite-plugin-full-reload": "^1.2.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/INTR83805881/job_portal_aust_31.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/INTR83805881/job_portal_aust_31/issues"
+    },
+    "homepage": "https://github.com/INTR83805881/job_portal_aust_31#readme"
 }

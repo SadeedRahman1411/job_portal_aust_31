@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('home');
+})->name('home');
+
+Route::get('/jobs', function () {
+    return view('jobs');
+})->name('jobs');
+
+Route::get('/job/{id}', function ($id) {
+    return view('jobs.show', compact('id'));
+})->name('jobs.show');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+
+Route::get('/auth', function () {
+    return view('auth.index');
+})->name('auth');
