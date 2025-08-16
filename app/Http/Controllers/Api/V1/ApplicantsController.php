@@ -21,13 +21,20 @@ class ApplicantsController extends Controller
         $filter = new ApplicantsFilter();
          $filterItems = $filter->transform($request);
 
-         if(count($filterItems) === 0) {
-            return new ApplicantsCollection(Applicants::paginate()); // Example implementation
-         }
-         else {
-            $applicants = Applicants::where($filterItems)->paginate();
-            return new ApplicantsCollection($applicants->appends($request->query())); // Example implementation
-         }
+         $includeApplicantContacts = $request->query('includeApplicantContacts');
+         $includeJobCompletions = $request->query('includeJobCompletions');
+
+           $applicants = Applicants::where($filterItems);
+           
+          if($includeApplicantContacts) 
+          {
+            $applicants = $applicants->with('contacts'); // Eager load applicant contacts if requested
+          }
+          if($includeJobCompletions){
+            $applicants = $applicants->with('jobsCompleted'); // Eager load job completions if requested
+          }
+
+        return new ApplicantsCollection($applicants->paginate()->appends($request->query()));
 
         // Applicants::where($filterItems);
 

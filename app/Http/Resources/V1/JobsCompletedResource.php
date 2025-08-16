@@ -15,16 +15,14 @@ class JobsCompletedResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
- 'id' => $this->id,
-            'applicantId' => $this->applicant_id,
-            'jobId' => $this->job_id,
-            'job' => [
-                'title' => $this->job?->title,
-                'description' => $this->job?->description,
-                'employmentType' => $this->job?->employment_type,
-                //'earnings' => $this->job?->salary_range,
-                      ],
-            'completedAt' => $this->completed_at,
+           // 'id' => $this->id,
+            //'applicantId' => $this->pivot->applicant_id ?? null, // pivot has applicant_id
+            'jobId' => $this->id,
+                'title' => $this->title,
+                'description' => $this->description,
+                'employmentType' => $this->employment_type,
+                //'earnings' => $this->salary_range,
+            'completedAt' => $this->pivot->completed_at ?? null, // pivot has completed_at
         ];
     }
 }

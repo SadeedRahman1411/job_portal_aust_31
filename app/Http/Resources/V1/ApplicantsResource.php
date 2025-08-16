@@ -25,6 +25,10 @@ class ApplicantsResource extends JsonResource
             'skills' => $this->skills,
             'resume' => $this->resume,
             'coverLetter' => $this->cover_letter,
+            'contacts' => ApplicantContactsResource::collection($this->whenLoaded('contacts')),
+             // Eager loaded contacts(function in Applicants model)
+             'jobsCompleted' => JobsCompletedResource::collection($this->whenLoaded('jobsCompleted')), // Eager loaded jobs completed
+
         ];
     }
 }
