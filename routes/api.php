@@ -20,8 +20,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // api/v1
 Route::group(['prefix' => 'v1','namespace'=>'App\Http\Controllers\Api\V1'], function () {
-    Route::apiResource('customers', CustomerController::class);
-    Route::apiResource('invoices', InvoiceController::class);
+    //Route::apiResource('customers', CustomerController::class);
+    //Route::apiResource('invoices', InvoiceController::class);
     Route::apiResource('organizations', OrganizationsController::class);
     Route::apiResource('jobs', JobsController::class);
     Route::apiResource('applicants', ApplicantsController::class);
@@ -29,5 +29,6 @@ Route::group(['prefix' => 'v1','namespace'=>'App\Http\Controllers\Api\V1'], func
     Route::apiResource('applicant_contacts', ApplicantContactsController::class);
     Route::apiResource('interviews', InterviewController::class);
     Route::apiResource('organization_contacts', OrganizationContactsController::class);
+    Route::apiResource('job_completions', JobCompletionsController::class);
     
 });

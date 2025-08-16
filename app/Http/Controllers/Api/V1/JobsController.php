@@ -6,6 +6,7 @@ use App\Models\Jobs;
 use App\Http\Requests\StoreJobsRequest;
 use App\Http\Requests\UpdateJobsRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\JobsResource;
 
 class JobsController extends Controller
 {
@@ -38,7 +39,7 @@ class JobsController extends Controller
      */
     public function show(Jobs $job)
     {
-        return $job;//
+        return new JobsResource($job);//
     }
 
     /**

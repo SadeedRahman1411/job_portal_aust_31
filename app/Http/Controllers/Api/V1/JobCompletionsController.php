@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api\V1;
 use App\Models\job_completions;
 use App\Http\Requests\Storejob_completionsRequest;
 use App\Http\Requests\Updatejob_completionsRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\JobsCompletedResource; // Assuming you have a resource for job completions
 
 class JobCompletionsController extends Controller
 {
@@ -13,7 +15,7 @@ class JobCompletionsController extends Controller
      */
     public function index()
     {
-        //
+        return job_completions::all();//
     }
 
     /**
@@ -29,15 +31,15 @@ class JobCompletionsController extends Controller
      */
     public function store(Storejob_completionsRequest $request)
     {
-        //
+
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(job_completions $job_completions)
+    public function show(job_completions $job_completion)
     {
-        //
+       return new  JobsCompletedResource($job_completion);//
     }
 
     /**

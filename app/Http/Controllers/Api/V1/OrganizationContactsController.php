@@ -6,6 +6,7 @@ use App\Models\Organization_contacts;
 use App\Http\Requests\StoreOrganization_contactsRequest;
 use App\Http\Requests\UpdateOrganization_contactsRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\OrganizationContactsResource;
 
 class OrganizationContactsController extends Controller
 {
@@ -38,7 +39,7 @@ class OrganizationContactsController extends Controller
      */
     public function show(Organization_contacts $organization_contact)
     {
-        return $organization_contact;//
+        return new OrganizationContactsResource($organization_contact);//
     }
 
     /**

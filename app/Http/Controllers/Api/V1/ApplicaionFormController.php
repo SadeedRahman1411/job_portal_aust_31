@@ -6,6 +6,7 @@ use App\Models\Applicaion_Form;
 use App\Http\Requests\StoreApplicaion_FormRequest;
 use App\Http\Requests\UpdateApplicaion_FormRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\ApplicaionFormResource;
 
 class ApplicaionFormController extends Controller
 {
@@ -38,7 +39,7 @@ class ApplicaionFormController extends Controller
      */
     public function show(Applicaion_Form $applicaion_Form)
     {
-        return $applicaion_Form;//
+        return new ApplicaionFormResource($applicaion_Form);//
     }
 
     /**

@@ -14,6 +14,11 @@ class OrganizationContactsResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'organizationId' => $this->organization_id, // FK to organizations
+            'type' => $this->type,                        // 'phone', 'email', or 'website'
+            'value' => $this->value,                      // actual phone/email/website
+        ];
     }
 }

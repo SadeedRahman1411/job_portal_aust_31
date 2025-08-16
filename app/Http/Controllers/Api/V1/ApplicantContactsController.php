@@ -6,6 +6,7 @@ use App\Models\Applicant_contacts;
 use App\Http\Requests\StoreApplicant_contactsRequest;
 use App\Http\Requests\UpdateApplicant_contactsRequest;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\ApplicantContactsResource;
 
 class ApplicantContactsController extends Controller
 {
@@ -36,9 +37,9 @@ class ApplicantContactsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Applicant_contacts $applicant_contacts)
+    public function show(Applicant_contacts $applicant_contact)
     {
-        //
+        return new ApplicantContactsResource($applicant_contact);//
     }
 
     /**

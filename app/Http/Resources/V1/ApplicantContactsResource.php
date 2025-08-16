@@ -14,6 +14,11 @@ class ApplicantContactsResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'applicantId' => $this->applicant_id,
+            'type' => $this->type,      // 'phone' or 'email'
+            'value' => $this->value,    // phone number or email address 
+        ];
     }
 }
