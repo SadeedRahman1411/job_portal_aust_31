@@ -17,7 +17,7 @@ class ApplicaionFormController extends Controller
      */
     public function index()
     {
-        return new ApplicaionFormCollection(Applicaion_Form::all()); // Example implementation
+        return new ApplicaionFormCollection(Applicaion_Form::paginate()); // Example implementation
     }
 
     /**

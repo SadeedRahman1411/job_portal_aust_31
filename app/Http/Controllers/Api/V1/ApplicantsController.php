@@ -17,7 +17,7 @@ class ApplicantsController extends Controller
      */
     public function index()
     {
-       return new ApplicantsCollection(Applicants::all()); // Example implementation
+       return new ApplicantsCollection(Applicants::paginate()); // Example implementation
     }
 
     /**

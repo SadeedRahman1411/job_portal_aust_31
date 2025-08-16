@@ -17,7 +17,7 @@ class JobsController extends Controller
      */
     public function index()
     {
-        return new JobsCollection(Jobs::all()); // Example implementation
+        return new JobsCollection(Jobs::paginate()); // Example implementation
     }
 
     /**

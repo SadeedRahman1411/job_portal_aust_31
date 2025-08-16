@@ -17,7 +17,7 @@ class ApplicantContactsController extends Controller
      */
     public function index()
     {
-        return new ApplicantContactsCollection(Applicant_contacts::all()); // Example implementation
+        return new ApplicantContactsCollection(Applicant_contacts::paginate()); // Example implementation
     }
 
     /**

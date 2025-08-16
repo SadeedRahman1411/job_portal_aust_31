@@ -17,7 +17,7 @@ class OrganizationContactsController extends Controller
      */
     public function index()
     {
-        return new OrganizationContactsCollection(Organization_contacts::all()); // Example implementation
+        return new OrganizationContactsCollection(Organization_contacts::paginate()); // Example implementation
     }
 
     /**

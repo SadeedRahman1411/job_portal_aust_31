@@ -17,7 +17,7 @@ class JobCompletionsController extends Controller
      */
     public function index()
     {
-        return new JobsCompletedCollection(job_completions::all());//
+        return new JobsCompletedCollection(job_completions::paginate());//
     }
 
     /**

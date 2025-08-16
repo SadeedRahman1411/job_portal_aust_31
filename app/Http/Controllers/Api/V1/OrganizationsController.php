@@ -17,7 +17,7 @@ class OrganizationsController extends Controller
      */
     public function index()
     {
-       return new OrganizationsCollection(Organizations::all()); // Example implementation
+       return new OrganizationsCollection(Organizations::paginate()); // Example implementation
         // --- IGNORE ---
     }
 
