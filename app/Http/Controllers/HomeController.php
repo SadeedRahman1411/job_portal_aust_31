@@ -6,15 +6,30 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-     public function index() {
-        return view('home');  // loads resources/views/home.blade.php
-    }
+    public function index()
+    {
+        $featuredJobs = [
+            (object)[ 
+                'id'=>1, 
+                'title'=>"Senior Frontend Developer", 
+                'company'=>"TechCorp", 
+                'location'=>"Dhaka, Bangladesh", 
+                'salary'=>"৳80k - ৳120k", 
+                'type'=>"Full-time", 
+                'tags'=>["React","TypeScript","Remote"]
+            ],
+            (object)[ 
+                'id'=>2, 
+                'title'=>"Product Manager", 
+                'company'=>"InnovateLabs", 
+                'location'=>"Chittagong, Bangladesh", 
+                'salary'=>"৳90k - ৳140k", 
+                'type'=>"Full-time", 
+                'tags'=>["Strategy","Analytics","Leadership"]
+            ],
+            // ... add more jobs here
+        ];
 
-    public function about() {
-        return view('about'); // loads resources/views/about.blade.php
-    }
-
-    public function contact() {
-        return view('contact'); // loads resources/views/contact.blade.php
+        return view('home', compact('featuredJobs'));
     }
 }
