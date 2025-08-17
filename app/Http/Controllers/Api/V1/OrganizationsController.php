@@ -22,6 +22,7 @@ class OrganizationsController extends Controller
          $filterItems = $filter->transform($request);
 
          $includeOrganizationContacts = $request->query('includeOrganizationContacts');
+         $includeEnlistedJobs = $request->query('includeEnlistedJobs');
 
          $organizations = Organizations::where($filterItems);
 
@@ -32,6 +33,8 @@ class OrganizationsController extends Controller
         }
     }]);
 }
+            if($includeEnlistedJobs)
+                $organizations = $organizations->with('jobs'); // Eager load enlisted jobs if requested
 
            return new OrganizationsCollection($organizations->paginate()->appends($request->query()));
 
