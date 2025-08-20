@@ -22,7 +22,7 @@ return new class extends Migration
         $table->enum('employment_type', ['full-time', 'part-time', 'internship', 'contract']);
         $table->date('deadline');
         $table->dateTime('posted_at')->useCurrent(); // Automatically set to current timestamp
-        $table->enum('status', ['enlisted', 'in_progress', 'completed'])->default('enlisted'); // updated job status   
+        $table->enum('status', ['enlisted', 'in_progress', 'completed'])->default('enlisted'); // updated job status  
         $table->timestamps();
         });
     }

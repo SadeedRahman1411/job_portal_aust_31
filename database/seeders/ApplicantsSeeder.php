@@ -47,5 +47,19 @@ class ApplicantsSeeder extends Seeder
                 'completed_at' => now()->subDays(rand(1, 30)),
             ]);
         }
+
+         $currentJobs = Jobs::where('status', 'in_progress')->get();
+
+        foreach ($applicants as $applicant) {
+            if (!$currentJobs->isEmpty()) {
+                $jobsToAttach = $currentJobs->random(rand(1, min(2, $currentJobs->count())))->pluck('id')->toArray();
+
+                $applicant->currentJobs()->attach($jobsToAttach, [
+                    'assigned_at' => now()->subDays(rand(0, 5)),
+                    'status'      => 'in_progress',
+                ]);
+            }
+        }
     }
+    
 }
