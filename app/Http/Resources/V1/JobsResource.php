@@ -16,14 +16,15 @@ class JobsResource extends JsonResource
     {
         return 
         [
-           'id' => $this->id,
+            'id' => $this->id,
             'organizationId' => $this->organization_id,
             'companyName' => $this->organization?->company_name, // include company name
-            'jobTitle' => $this->title, //check model for correct field name
+            'jobTitle' => $this->title,
             'description' => $this->description,
             'location' => $this->location,
             'jobType' => $this->employment_type,
-            'salary' => $this->salary_range,
+            'salary' => $this->salary, // updated field
+
         ];
     }
 }
