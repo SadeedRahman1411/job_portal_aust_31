@@ -6,15 +6,29 @@ use App\Http\Controllers\Controller;
 use App\Models\Skills;
 use App\Http\Requests\StoreSkillsRequest;
 use App\Http\Requests\UpdateSkillsRequest;
+use App\Http\Resources\V1\SkillsResource;
+use App\Http\Resources\V1\SkillsCollection;
+use App\Filters\V1\SkillsFilter;
+use Illuminate\Http\Request;
 
 class SkillsController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+         $filter = new SkillsFilter();
+         
+         $filterItems = $filter->transform($request);
+
+         if(count($filterItems) === 0) {
+            return new SkillsCollection(Skills::paginate()); // Example implementation
+         }
+         else {
+            $skills = Skills::where($filterItems)->paginate();
+            return new SkillsCollection($skills->appends($request->query())); // Example implementation
+         }
     }
 
     /**
@@ -36,9 +50,9 @@ class SkillsController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Skills $skills)
+    public function show(Skills $skill)
     {
-        //
+       return new SkillsResource($skill); //
     }
 
     /**
