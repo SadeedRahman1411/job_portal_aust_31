@@ -20,16 +20,15 @@ class JobsFactory extends Factory
      */
     public function definition(): array
     {
-        $employmentTypes = ['full-time', 'part-time', 'internship', 'contract'];
+        $employmentTypes = ['full-time', 'part-time', 'internship'];
         $statusOptions = ['enlisted', 'in_progress', 'completed'];
 
         return [
             //'organization_id' => Organizations::factory(), // Associate with an organization
-            'title' => $this->faker->jobTitle(),
+           'title' => $this->faker->jobTitle(),
             'description' => $this->faker->paragraph(3),
-            'requirements' => json_encode($this->faker->words(5)), // store as JSON
             'location' => $this->faker->city(),
-            'salary_range' => $this->faker->numberBetween(20000, 150000) . '-' . $this->faker->numberBetween(160000, 300000),
+            'salary' => $this->faker->numberBetween(20000, 150000), // single salary value
             'employment_type' => $this->faker->randomElement($employmentTypes),
             'deadline' => $this->faker->dateTimeBetween('now', '+2 months'),
             'posted_at' => now(),

@@ -17,12 +17,11 @@ class Jobs extends Model
     protected $table = 'jobs';
 
     protected $fillable = [
-        'organization_id',
+       'organization_id',
         'title',
         'description',
-        'requirements',
         'location',
-        'salary_range',
+        'salary',
         'employment_type',
         'deadline',
         'posted_at',

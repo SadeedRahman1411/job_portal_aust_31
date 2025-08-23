@@ -56,6 +56,17 @@ class Applicants extends Model
                 ->where('status', 'completed'); // only jobs with status completed
 }
 
+    /**
+     * Current jobs this applicant is working on.
+     */
+public function currentJobs()
+{
+    return $this->belongsToMany(Jobs::class, 'current_jobs', 'applicant_id', 'job_id')
+                ->withPivot('assigned_at', 'status')
+                ->withTimestamps()
+                ->wherePivot('status', 'in_progress') // only in-progress jobs
+                ->orderByPivot('assigned_at', 'desc');
+}
 
     /**
      * Applications submitted by this applicant.

@@ -23,6 +23,7 @@ class ApplicantsController extends Controller
 
          $includeApplicantContacts = $request->query('includeApplicantContacts');
          $includeJobCompletions = $request->query('includeJobCompletions');
+         $includeCurrentJobs = $request->query('includeCurrentJobs');
 
            $applicants = Applicants::where($filterItems);
            
@@ -35,6 +36,9 @@ class ApplicantsController extends Controller
     }
           if($includeJobCompletions){
             $applicants = $applicants->with('jobsCompleted'); // Eager load job completions if requested
+          }
+          if($includeCurrentJobs){
+            $applicants = $applicants->with('currentJobs'); // Eager load job completions if requested
           }
 
         return new ApplicantsCollection($applicants->paginate()->appends($request->query()));
